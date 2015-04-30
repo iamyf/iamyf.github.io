@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://iamyf.github.io/sitemap.xml 

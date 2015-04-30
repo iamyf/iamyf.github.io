@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Sjtu | IamYF's Blog]]></title>
+  <link href="http://iamyf.github.io/blog/categories/sjtu/atom.xml" rel="self"/>
+  <link href="http://iamyf.github.io/"/>
+  <updated>2015-04-30T10:48:53-07:00</updated>
+  <id>http://iamyf.github.io/</id>
+  <author>
+    <name><![CDATA[Fei Yang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[About Me]]></title>
+    <link href="http://iamyf.github.io/blog/2015/04/30/about-me/"/>
+    <updated>2015-04-30T09:45:15-07:00</updated>
+    <id>http://iamyf.github.io/blog/2015/04/30/about-me</id>
+    <content type="html"><![CDATA[<p>My name is Fei Yang</p>
+]]></content>
+  </entry>
+  
+</feed>

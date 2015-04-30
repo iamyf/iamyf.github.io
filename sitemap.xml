@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://iamyf.github.io/blog/2015/04/30/research/</loc>
+    <lastmod>2015-04-30T09:46:00-07:00</lastmod>
+  </url>
+  <url>
+    <loc>http://iamyf.github.io/blog/2015/04/30/about-me/</loc>
+    <lastmod>2015-04-30T09:45:15-07:00</lastmod>
+  </url>
+  <url>
+    <loc>http://iamyf.github.io/blog/2015/04/30/my-first-blog/</loc>
+    <lastmod>2015-04-30T09:17:09-07:00</lastmod>
+  </url>
+  <url>
+    <loc>http://iamyf.github.io/</loc>
+  </url>
+  <url>
+    <loc>http://iamyf.github.io/blog/archives/</loc>
+  </url>
+  <url>
+    <loc>http://iamyf.github.io/blog/categories/phd/</loc>
+  </url>
+  <url>
+    <loc>http://iamyf.github.io/blog/categories/tue/</loc>
+  </url>
+  <url>
+    <loc>http://iamyf.github.io/blog/categories/sjtu/</loc>
+  </url>
+  <url>
+    <loc>http://iamyf.github.io/blog/categories/computer-science/</loc>
+  </url>
+</urlset>
