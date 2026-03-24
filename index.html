@@ -1,4 +1,20 @@
-<!DOCTYPE html>
+<!DOCTYPE h
+            &lt;/div&gt;
+
+            &lt;div class="research-interests"&gt;
+                &lt;h3&gt;Research Interests&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;Distributed Computing Theory&lt;/li&gt;
+                    &lt;li&gt;Machine Learning Systems&lt;/li&gt;
+                    &lt;li&gt;Large Model Training&lt;/li&gt;
+                    &lt;li&gt;Heterogeneous Clusters&lt;/li&gt;
+                    &lt;li&gt;Quantization &amp; Compression&lt;/li&gt;
+                    &lt;li&gt;Domestic Chip Adaptation&lt;/li&gt;
+                    &lt;li&gt;Standardization&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -182,6 +198,37 @@
             font-size: 17px;
             line-height: 1.8;
             color: var(--text-color);
+        }
+
+        .research-interests {
+            margin-top: 25px;
+        }
+
+        .research-interests h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-color);
+        }
+
+        .research-interests ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .research-interests li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            color: var(--text-color);
+        }
+
+        .research-interests li::before {
+            content: "•";
+            position: absolute;
+            left: 8px;
+            color: var(--primary-color);
+            font-weight: bold;
         }
 
         .highlight-stats {
@@ -637,7 +684,7 @@
 
         <section id="publications">
             <h2>Selected Publications</h2>
-            <p style="margin-bottom: 20px; color: var(--text-secondary);">Sorted by conference/journal rank, * indicates corresponding author</p>
+            <p style="margin-bottom: 20px; color: var(--text-secondary);">Sorted by publication date (most recent first), * indicates corresponding author</p>
 
             <div class="pub-list">
                 <!-- 顶级会议 -->
