@@ -1,222 +1,831 @@
-
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>IamYF&#8217;s Blog</title>
-  <meta name="author" content="Fei Yang">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fei Yang - Academic Homepage</title>
+    <meta name="description" content="Fei Yang, Associate Professor, Deputy Director of High-Performance Computing Facility Research Center, Zhejiang Laboratory">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --text-color: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-color: #ffffff;
+            --bg-secondary: #f9fafb;
+            --border-color: #e5e7eb;
+            --accent-color: #10b981;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
 
-  
-  <meta name="description" content="
-">
-  
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
 
-  
-  <link rel="canonical" href="http://iamyf.github.io/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="IamYF's Blog" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-  
+        header {
+            padding: 60px 0 40px;
+            border-bottom: 1px solid var(--border-color);
+            background-color: var(--bg-color);
+        }
 
+        .header-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            background-color: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .intro {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-color);
+        }
+
+        .title {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .affiliation {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .contacts {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 15px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: background-color 0.2s;
+        }
+
+        .contact-link:hover {
+            background-color: rgba(37, 99, 235, 0.1);
+        }
+
+        nav {
+            background-color: var(--bg-secondary);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 8px;
+            flex-wrap: wrap;
+            padding: 12px 0;
+        }
+
+        nav a {
+            display: block;
+            padding: 8px 16px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+            background-color: rgba(37, 99, 235, 0.08);
+        }
+
+        nav a.active {
+            color: var(--primary-color);
+            background-color: rgba(37, 99, 235, 0.1);
+        }
+
+        main {
+            padding: 40px 0;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+            color: var(--text-color);
+        }
+
+        .bio {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+
+        .highlight-stats {
+            display: flex;
+            justify-content: space-around;
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 30px 0;
+            border: 1px solid var(--border-color);
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .timeline {
+            position: relative;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            padding-bottom: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 16px;
+            width: 2px;
+            height: calc(100% - 10px);
+            background-color: var(--border-color);
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .timeline-period {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 15px;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            font-size: 17px;
+            margin: 4px 0;
+        }
+
+        .timeline-place {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        .contribution {
+            background-color: var(--bg-secondary);
+            border-left: 4px solid var(--primary-color);
+            padding: 20px 24px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .contribution h3 {
+            font-size: 19px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        .contribution p {
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        .awards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+        }
+
+        .award-item {
+            background-color: var(--bg-secondary);
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .award-name {
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .award-year {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            background-color: var(--accent-color);
+            color: white;
+            font-size: 12px;
+            font-weight: 500;
+            border-radius: 12px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 30px 0;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Publications Styles */
+        .pub-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .pub-item {
+            background-color: var(--bg-secondary);
+            padding: 18px 22px;
+            border-radius: 8px;
+            border-left: 3px solid var(--primary-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .pub-item:hover {
+            transform: translateX(4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .pub-title {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 5px;
+        }
+
+        .pub-authors {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .pub-venue {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .venue-top {
+            display: inline-block;
+            padding: 2px 8px;
+            background-color: #dc2626;
+            color: white;
+            font-weight: 600;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-right: 6px;
+        }
+
+        .venue-journal {
+            display: inline-block;
+            padding: 2px 8px;
+            background-color: #059669;
+            color: white;
+            font-weight: 600;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-right: 6px;
+        }
+
+        .badge-first {
+            display: inline-block;
+            padding: 2px 8px;
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 500;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .badge-corresponding {
+            display: inline-block;
+            padding: 2px 8px;
+            background-color: #f59e0b;
+            color: white;
+            font-weight: 500;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .pub-more {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-secondary);
+        }
+
+        .pub-more a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .pub-more a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 0 30px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 24px;
+            }
+
+            .avatar {
+                width: 140px;
+                height: 140px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .contacts {
+                justify-content: center;
+            }
+
+            nav ul {
+                justify-content: flex-start;
+            }
+
+            .highlight-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pub-item {
+                padding: 14px 16px;
+            }
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s;
+            box-shadow: var(--shadow-md);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
 </head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="avatar">
+                    <img src="avatar.jpg" alt="杨非">
+                </div>
+                <div class="intro">
+                    <h1>Fei Yang</h1>
+                    <p class="title">Ph.D. | Associate Professor</p>
+                    <p class="affiliation">
+                        Deputy Director<br>
+                        High-Performance Computing Facility Research Center<br>
+                        Zhejiang Laboratory
+                    </p>
+                    <div class="contacts">
+                        <a href="https://scholar.google.com/citations?user=d1Z_A9AAAAAJ&hl=en" target="_blank" class="contact-link">
+                            📚 Google Scholar
+                        </a>
+                        <!-- Add other links like GitHub, ResearchGate here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">IamYF&#8217;s Blog</a></h1>
-  
-    <h2>A blog of IamYF.</h2>
-  
-</hgroup>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about" class="nav-link active">About</a></li>
+                <li><a href="#biography">Biography</a></li>
+                <li><a href="#contributions">Contributions</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#awards">Awards</a></li>
+            </ul>
+        </div>
+    </nav>
 
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="https://www.google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="sitesearch" value="iamyf.github.io">
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
+    <main class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="bio">
+                <p>My research focuses on distributed computing theory and machine learning systems. I have published over 40 papers in top conferences and journals, been granted more than 40 invention patents, and led the release of 3 ITU international standards. My work has received the World Internet Conference Leading Science and Technology Award, Zhejiang Provincial Science and Technology Progress Award (First and Second Class), and has achieved significant application results in the construction of domestic AI computing clusters.</p>
+            </div>
 
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/04/30/research/">Research</a></h1>
-    
-    
-      <p class="meta">
-        
+            <div class="highlight-stats">
+                <div class="stat-item">
+                    <div class="stat-number">40+</div>
+                    <div class="stat-label">Publications</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">40+</div>
+                    <div class="stat-label">Patents</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">ITU Standards</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">Multiple</div>
+                    <div class="stat-label">Awards</div>
+                </div>
+            </div>
 
+            <div style="margin-top: 25px;">
+                <span class="badge">Distributed Computing</span>
+                <span class="badge">ML Systems</span>
+                <span class="badge">Large Model Training</span>
+                <span class="badge">Heterogeneous Clusters</span>
+                <span class="badge">Quantization & Compression</span>
+                <span class="badge">Domestic Chip Adaptation</span>
+                <span class="badge">Standardization</span>
+            </div>
+        </section>
 
+        <section id="biography">
+            <h2>Biography</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-period">Present</div>
+                    <div class="timeline-title">Zhejiang Laboratory</div>
+                    <div class="timeline-place">Deputy Director, High-Performance Computing Facility Research Center<br>Associate Professor</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-period">Ph.D.</div>
+                    <div class="timeline-title">Eindhoven University of Technology</div>
+                    <div class="timeline-place">Netherlands</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-period">B.Eng. & M.Eng.</div>
+                    <div class="timeline-title">Shanghai Jiao Tong University</div>
+                    <div class="timeline-place">Shanghai, China</div>
+                </div>
+            </div>
+        </section>
 
+        <section id="contributions">
+            <h2>Research Contributions</h2>
 
-<time class='entry-date' datetime='2015-04-30T09:46:00-07:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>9:46 am</span></time>
-        
-      </p>
-    
-  </header>
+            <div class="contribution">
+                <h3>1. Distributed Computing Theory and System Architecture Innovation</h3>
+                <p>Addressing the challenge of decoupling logical representation from physical resources in distributed training, I proposed the SBP (Split-Batch-Parallel) abstraction for distributed training, which serves as the core mathematical foundation for the domestic deep learning framework OneFlow. This theoretical innovation enables unified expression of operator-level parallel strategies and automatic derivation of data routing, mathematically solving the separation problem between distributed logical views and physical device views. It enabled OneFlow to become a performance-leading distributed framework and a representative domestic alternative to PyTorch at the time. This work provides an important theoretical basis for the formal study of distributed training systems, and its design ideas have been adopted by multiple domestic frameworks.</p>
+            </div>
 
+            <div class="contribution">
+                <h3>2. Heterogeneous Cluster Training Framework and Automatic Parallelism</h3>
+                <p>Addressing the challenges of complex heterogeneous network environments and difficult parallel strategy adaptation in domestic clusters, I developed Holmes, the first distributed training framework adapted for heterogeneous network environments. We broke through non-uniform partitioning of 3D parallel strategies and automatic routing technologies for heterogeneous networks, achieving 1.4x performance improvement over mainstream frameworks like Megatron in hybrid network environments. This work became a pioneering study in heterogeneous hybrid training on domestic clusters, published at ICPP, the top conference in distributed computing. Furthermore, we proposed AutoHAAP, an automatic parallel framework for heterogeneous clusters, achieving automatic parallel strategy optimization based on cost models and heuristic search, supporting minute-level search at the 10,000-card scale. This work was published at HPCA, the top conference in computer architecture, and is at the leading level in the field of heterogeneous distributed training.</p>
+            </div>
 
-  <div class="entry-content">
-</div>
-  
-  
+            <div class="contribution">
+                <h3>3. Computational Efficiency Optimization and Domestic Chip Adaptation</h3>
+                <p>Focusing on the core challenges of diverse numerical formats and complex distribution characteristics of domestic chips, I systematically conducted research on hardware-aware compression techniques. We proposed a series of tensor distribution-sensitive compression methods including FlattenQuant (for large language models), ADFQ-ViT (for vision models), and PTQ4PLM (for protein language models), effectively solving the problem of outlier suppression and quantization accuracy loss. Our results have been published in top conferences and journals including ICML, Neural Networks, and LREC-Coling. Through cross-team collaboration, we applied these technologies to the adaptation and optimization of 236B MoE language models, 72B geoscience models, 70B astronomy models, and 13B protein models on domestic chips, achieving 40% MFU for MoE model training on a domestic 1,000-card cluster, which reaches the industry-leading level. As subsystem leader, our work "Aggregated Heterogeneous Computing Power Intelligent Computing System" won the Second Prize of Zhejiang Provincial Science and Technology Progress Award.</p>
+            </div>
 
+            <div class="contribution">
+                <h3>4. Large-Scale System Integration and Engineering Practice</h3>
+                <p>As technical lead, I led the development of the large model training and inference system in the Nanhu Computing Framework, leading the team to breakthrough multiple key efficiency optimization technologies including mixed-precision training, asynchronous checkpointing, data splicing compression, and deep bottleneck analysis. This supported the construction and validation of the basic 10,000-card and hybrid 10,000-card clusters at Zhejiang's New Computing Power Center. The research results have been applied to multiple scientific large model training tasks at Zhejiang Laboratory, including 021, geoscience, astronomy, and biology, and the related technologies have saved nearly 100 million yuan in computing costs, achieving significant social and economic benefits. The "Nanhu Computing Framework" I participated in won the World Internet Conference Leading Science and Technology Award, and "Key Technologies and Applications of Intelligent Computing for Large Language Model Training" won the First Prize of Zhejiang Provincial Science and Technology Progress Award. We are currently advancing the training of a trillion-parameter large model on a domestic 10,000-card cluster, which is expected to become a benchmark achievement on domestic computing power and an independent ecosystem.</p>
+            </div>
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/04/30/about-me/">About Me</a></h1>
-    
-    
-      <p class="meta">
-        
+            <div class="contribution">
+                <h3>5. Standardization</h3>
+                <p>Led the release of 3 international standards for AI cloud platforms at the International Telecommunication Union (ITU), forming a complete standard system covering technical architecture, training processes, and performance evaluation.</p>
+            </div>
+        </section>
 
+        <section id="awards">
+            <h2>Awards & Honors</h2>
+            <div class="awards">
+                <div class="award-item">
+                    <div class="award-name">World Internet Conference<br>Leading Science and Technology Award</div>
+                    <div class="award-year">Nanhu Computing Framework</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-name">Zhejiang Provincial Science and Technology Progress Award<br>First Class</div>
+                    <div class="award-year">Key Technologies and Applications of Intelligent Computing for Large Language Model Training</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-name">Zhejiang Provincial Science and Technology Progress Award<br>Second Class</div>
+                    <div class="award-year">Aggregated Heterogeneous Computing Power Intelligent Computing System</div>
+                </div>
+            </div>
+        </section>
 
+        <section id="publications">
+            <h2>Selected Publications</h2>
+            <p style="margin-bottom: 20px; color: var(--text-secondary);">Sorted by conference/journal rank, * indicates corresponding author</p>
 
+            <div class="pub-list">
+                <!-- 顶级会议 -->
+                <div class="pub-item">
+                    <div class="pub-title"><a href="" target="_blank" style="color: inherit; text-decoration: none;">BSLoRA: Enhancing the Parameter Efficiency of LoRA with Intra-Layer and Inter-Layer Sharing</a></div>
+                    <div class="pub-authors">Yuhua Zhou, Ruifeng Li, Changhai Zhou, <strong>Fei Yang*</strong>, Aimin Pan</div>
+                    <div class="pub-venue"><span class="venue-top">ICML 2025</span> • Top Conference in Machine Learning <span class="badge-corresponding">Corresponding</span></div>
+                </div>
 
-<time class='entry-date' datetime='2015-04-30T09:45:15-07:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>9:45 am</span></time>
-        
-      </p>
-    
-  </header>
+                <div class="pub-item">
+                    <div class="pub-title"><a href="" target="_blank" style="color: inherit; text-decoration: none;">Holmes: Towards Distributed Training Across Clusters with Heterogeneous NIC Environment</a></div>
+                    <div class="pub-authors"><strong>Fei Yang</strong>, Shuang Peng, Ning Sun, Fangyu Wang, Yuanyuan Wang, Fu Wu, Jiezhong Qiu, Aimin Pan</div>
+                    <div class="pub-venue"><span class="venue-top">ICPP 2024</span> • Top Conference in Distributed Computing <span class="badge-first">First Author</span></div>
+                </div>
 
+                <div class="pub-item">
+                    <div class="pub-title"><a href="" target="_blank" style="color: inherit; text-decoration: none;">FlattenQuant: Breaking Through the Inference Compute-bound for Large Language Models with Per-tensor Quantization</a></div>
+                    <div class="pub-authors">Yi Zhang, <strong>Fei Yang*</strong>, Shuang Peng, Fangyu Wang, Aimin Pan</div>
+                    <div class="pub-venue"><span class="venue-top">LREC-Coling 2024</span> • <span class="badge-corresponding">Corresponding</span></div>
+                </div>
 
-  <div class="entry-content"><p>My name is Fei Yang</p>
-</div>
-  
-  
+                <div class="pub-item">
+                    <div class="pub-title"><a href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/06f3398a5ba59d7b2a4cdb01550a366b-Abstract.html" target="_blank" style="color: inherit; text-decoration: none;">Exploring evolution-aware &-free protein language models as protein function predictors</a></div>
+                    <div class="pub-authors">Mingyang Hu, Fajie Yuan, Kevin Yang, Fusong Ju, Jin Su, Hui Wang, <strong>Fei Yang*</strong>, Qiuyang Ding</div>
+                    <div class="pub-venue"><span class="venue-top">NeurIPS 2022</span> • Top Conference in AI <span class="badge-corresponding">Corresponding</span></div>
+                </div>
 
+                <div class="pub-item">
+                    <div class="pub-title"><a href="https://aclanthology.org/2021.findings-emnlp.193/" target="_blank" style="color: inherit; text-decoration: none;">Towards Unified Prompt Tuning for Few-shot Text Classification</a></div>
+                    <div class="pub-authors">Jianing Wang, Chengyu Wang, Fuli Luo, Chuanqi Tan, Minghui Qiu, <strong>Fei Yang*</strong>, Qiuhui Shi, Songfang Huang, Ming Gao</div>
+                    <div class="pub-venue"><span class="venue-top">EMNLP Findings 2021</span> <span class="badge-corresponding">Corresponding</span></div>
+                </div>
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/04/30/my-first-blog/">My First Blog</a></h1>
-    
-    
-      <p class="meta">
-        
+                <div class="pub-item">
+                    <div class="pub-title"><a href="https://aclanthology.org/D19-1143/" target="_blank" style="color: inherit; text-decoration: none;">Meta Distant Transfer Learning for Pre-trained Language Models</a></div>
+                    <div class="pub-authors">Chengyu Wang, Haojie Pan, Minghui Qiu, Jun Huang, <strong>Fei Yang*</strong>, Yin Zhang</div>
+                    <div class="pub-venue"><span class="venue-top">EMNLP 2019</span> • Top Conference in NLP <span class="badge-corresponding">Corresponding</span></div>
+                </div>
 
+                <div class="pub-item">
+                    <div class="pub-title"><a href="https://dl.acm.org/doi/10.1145/3539618.3591999" target="_blank" style="color: inherit; text-decoration: none;">Where to go next for recommender systems? id-vs. modality-based recommender models revisited</a></div>
+                    <div class="pub-authors">Zheng Yuan, Fajie Yuan, Yu Song, Youhua Li, Junchen Fu, <strong>Fei Yang*</strong>, Yunzhu Pan, Yongxin Ni</div>
+                    <div class="pub-venue"><span class="venue-top">SIGIR 2023</span> • Top Conference in Information Retrieval <span class="badge-corresponding">Corresponding</span></div>
+                </div>
 
+                <div class="pub-item">
+                    <div class="pub-title"><a href="" target="_blank" style="color: inherit; text-decoration: none;">Learning unbiased transferability for domain adaptation by uncertainty modeling</a></div>
+                    <div class="pub-authors">Jian Hu, Haowen Zhong, <strong>Fei Yang*</strong>, Shaogang Gong, Guile Wu, Junchi Yan</div>
+                    <div class="pub-venue"><span class="venue-top">ECCV 2022</span> • Top Conference in Computer Vision <span class="badge-corresponding">Corresponding</span></div>
+                </div>
 
+                <div class="pub-item">
+                    <div class="pub-title"><a href="" target="_blank" style="color: inherit; text-decoration: none;">Obscure but Effective: Classical Chinese Jailbreak Prompt Optimization via Bio-Inspired Search</a></div>
+                    <div class="pub-authors">Xun Huang, Simeng Qin, Xiaoshuang Jia, Ranjie Duan, Huanqian Yan, Zhitao Zeng, <strong>Fei Yang*</strong>, Yang Liu, Xiaojun Jia</div>
+                    <div class="pub-venue"><span class="venue-top">ICLR 2025</span> <span class="badge-corresponding">Corresponding</span></div>
+                </div>
 
-<time class='entry-date' datetime='2015-04-30T09:17:09-07:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>9:17 am</span></time>
-        
-      </p>
-    
-  </header>
+                <div class="pub-item">
+                    <div class="pub-title"><a href="" target="_blank" style="color: inherit; text-decoration: none;">AutoHAAP: Automated Heterogeneity-Aware Asymmetric Partitioning for LLM Training</a></div>
+                    <div class="pub-authors">Yuanyuan Wang, Nana Tang, Yuyang Wang, Shu Pan, Dingding Yu, Zeyue Wang, Mou Sun, Kejie Fu, Fangyu Wang, Yunchuan Chen, Ning Sun, <strong>Fei Yang*</strong></div>
+                    <div class="pub-venue"><span class="venue-top">HPCA 2026</span> • Top Conference in Computer Architecture <span class="badge-corresponding">Corresponding</span></div>
+                </div>
 
+                <div class="pub-item">
+                    <div class="pub-title"><a href="" target="_blank" style="color: inherit; text-decoration: none;">LaRA: Layer-wise Rank Allocation for Efficient Fine-tuning of Pruned Large Language Models</a></div>
+                    <div class="pub-authors">Yuhua Zhou, Changhai Zhou, Shiyang Zhang, <strong>Fei Yang*</strong>, Yi Zhang, Aimin Pan</div>
+                    <div class="pub-venue"><span class="venue-top">IPM 2026</span> • Top Journal <span class="badge-corresponding">Corresponding</span></div>
+                </div>
 
-  <div class="entry-content">
-</div>
-  
-  
+                <!-- Top Journals -->
+                <div class="pub-item">
+                    <div class="pub-title"><a href="" target="_blank" style="color: inherit; text-decoration: none;">ADFQ-ViT: Activation-Distribution-Friendly post-training Quantization for Vision Transformers</a></div>
+                    <div class="pub-authors">Yanfeng Jiang, Ning Sun, Xueshuo Xie, <strong>Fei Yang*</strong>, Tao Li</div>
+                    <div class="pub-venue"><span class="venue-journal">Neural Networks</span> • Top Journal <span class="badge-corresponding">Corresponding</span></div>
+                </div>
 
+                <div class="pub-item">
+                    <div class="pub-title"><a href="https://doi.org/10.2168/LMCS-8.1.15.2012" target="_blank" style="color: inherit; text-decoration: none;">The pi-Calculus is Behaviourally Complete and Orbit-Finitely Executable</a></div>
+                    <div class="pub-authors">Bas Luttik, <strong>Fei Yang</strong></div>
+                    <div class="pub-venue"><span class="venue-journal">LMCS</span> • Leading Journal in Logic and Computation <span class="badge-first">First Author</span></div>
+                </div>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2015/04/30/research/">Research</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/04/30/about-me/">About Me</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/04/30/my-first-blog/">My First Blog</a>
-      </li>
-    
-  </ul>
-</section>
+                <div class="pub-item">
+                    <div class="pub-title"><a href="https://doi.org/10.1109/TIM.2021.3137309" target="_blank" style="color: inherit; text-decoration: none;">An effective coaxiality measurement for twist drill based on line structured light sensor</a></div>
+                    <div class="pub-authors">Ailing Cheng, Jiaojiao Ye, <strong>Fei Yang*</strong>, Shufang Lu, Fei Gao</div>
+                    <div class="pub-venue"><span class="venue-journal">IEEE Transactions on Instrumentation and Measurement</span> • Top Journal <span class="badge-corresponding">Corresponding</span></div>
+                </div>
 
+                <div class="pub-item">
+                    <div class="pub-title"><a href="" target="_blank" style="color: inherit; text-decoration: none;">Towards Global Reaction Feasibility and Robustness Prediction with High Throughput Data and Bayesian Deep Learning</a></div>
+                    <div class="pub-authors">Xiaoxue Wang, Haowen Zhong, Yilan Liu, Haibin Sun, Yuru Liu, Rentao Zhang, Baochen Li, Yi Yang, Yuqing Huang, <strong>Fei Yang*</strong>, ...</div>
+                    <div class="pub-venue"><span class="venue-journal">Nature Communications</span> • Top Interdisciplinary Journal <span class="badge-corresponding">Corresponding</span></div>
+                </div>
 
+                <div class="pub-item">
+                    <div class="pub-title"><a href="" target="_blank" style="color: inherit; text-decoration: none;">Parameter-Efficient Fine-Tuning in Large Models: A Survey of Methodologies</a></div>
+                    <div class="pub-authors">Luping Wang, Sheng Chen, Linnan Jiang, Shu Pan, Runze Cai, Sen Yang, <strong>Fei Yang*</strong></div>
+                    <div class="pub-venue"><span class="venue-journal">Artificial Intelligence Review</span> • Top Journal <span class="badge-corresponding">Corresponding</span></div>
+                </div>
 
+                <div class="pub-item">
+                    <div class="pub-title"><a href="https://doi.org/10.1007/s10462-023-10573-4" target="_blank" style="color: inherit; text-decoration: none;">Robust and Privacy-Preserving Collaborative Learning: A Comprehensive Survey</a></div>
+                    <div class="pub-authors"><strong>Fei Yang</strong>, Xu Zhang, Shangwei Guo, Daiyuan Chen, Tianwei Zhang, Yan Gan, Tao Xiang, Yang Liu</div>
+                    <div class="pub-venue"><span class="venue-journal">Artificial Intelligence Review</span> • Top Journal <span class="badge-first">First Author</span> <span class="badge-corresponding">Corresponding</span></div>
+                </div>
 
+                <div class="pub-item">
+                    <div class="pub-title"><a href="https://doi.org/10.1002/spe.3293" target="_blank" style="color: inherit; text-decoration: none;">On the performance and memory footprint of distributed training: An empirical study on transformers</a></div>
+                    <div class="pub-authors">Zhengxian Lu, Fangyu Wang, Zhiwei Xu, <strong>Fei Yang*</strong>, Tao Li</div>
+                    <div class="pub-venue"><span class="venue-journal">Software: Practice and Experience</span> • Leading Journal in Software Engineering <span class="badge-corresponding">Corresponding</span></div>
+                </div>
 
-  
-</aside>
+                <div class="pub-item">
+                    <div class="pub-title"><a href="https://doi.org/10.1007/s11432-023-3514-y" target="_blank" style="color: inherit; text-decoration: none;">CPT: A pre-trained unbalanced transformer for both Chinese language understanding and generation</a></div>
+                    <div class="pub-authors">Yunfan Shao, Zhichao Geng, Yitao Liu, Junqi Dai, <strong>Fei Yang</strong>, Li Zhe, Hujun Bao, Xipeng Qiu</div>
+                    <div class="pub-venue"><span class="venue-journal">Science China-Information Science</span> • Top Journal</div>
+                </div>
 
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - Fei Yang -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
+                <div class="pub-more">
+                    <p>Full publication list is available on <a href="https://scholar.google.com/citations?user=d1Z_A9AAAAAJ&hl=en" target="_blank">Google Scholar</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-</footer>
-  
+    <footer>
+        <div class="container">
+            <p>© <span id="year"></span> 杨非. All rights reserved.</p>
+        </div>
+    </footer>
 
+    <a href="#" class="scroll-top" id="scrollTop">↑</a>
 
+    <script>
+        // 导航高亮
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section');
 
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
 
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
 
+            // 回到顶部按钮
+            const scrollTopBtn = document.getElementById('scrollTop');
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
 
+        // 平滑滚动
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').slice(1);
+                const targetElement = document.getElementById(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
 
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
+        // 回到顶部
+        document.getElementById('scrollTop').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
 
-
-
-
-
+        // 当前年份
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
