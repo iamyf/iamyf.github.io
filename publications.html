@@ -82,16 +82,35 @@
             padding: 40px 0;
         }
 
-        .section-title {
-            font-size: 20px;
+        .legend {
+            background-color: var(--bg-secondary);
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .legend-title {
             font-weight: 600;
             margin-bottom: 8px;
-            color: var(--text-secondary);
+            color: var(--text-color);
+        }
+
+        .legend-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .legend-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .section-desc {
             color: var(--text-secondary);
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             font-size: 15px;
         }
 
@@ -182,6 +201,16 @@
             margin-right: 6px;
         }
 
+        .badge-type {
+            display: inline-block;
+            padding: 2px 8px;
+            color: white;
+            font-weight: 500;
+            border-radius: 4px;
+            font-size: 11px;
+            margin-right: 6px;
+        }
+
         .badge-first {
             display: inline-block;
             padding: 2px 8px;
@@ -228,6 +257,10 @@
             .pub-title {
                 font-size: 15px;
             }
+
+            .legend-items {
+                gap: 8px;
+            }
         }
     </style>
 </head>
@@ -242,34 +275,51 @@
     </header>
 
     <main class="container">
-        <p class="section-desc">Sorted by publication date (most recent first), then by First Author → Corresponding → Other. <span class="badge-first">First Author</span> and <span class="badge-corresponding">Corresponding</span> papers are highlighted.</p>
+        <p class="section-desc">Sorted by publication date (most recent first), then by First Author → Corresponding → Other.</p>
+
+        <div class="legend">
+            <div class="legend-title">Legend</div>
+            <div class="legend-items">
+                <div class="legend-item"><span class="venue-top">CCF A</span> CCF A类</div>
+                <div class="legend-item"><span class="venue-journal">CCF B</span> CCF B类</div>
+                <div class="legend-item"><span class="venue-journal" style="background-color: #6b7280;">CCF C</span> CCF C类</div>
+                <div class="legend-item"><span class="venue-journal">中科院一区</span> 中科院一区</div>
+                <div class="legend-item"><span class="venue-journal" style="background-color: #f59e0b;">中科院二区</span> 中科院二区</div>
+                <div class="legend-item"><span class="venue-journal" style="background-color: #6366f1;">中科院三区</span> 中科院三区</div>
+                <div class="legend-item"><span class="venue-journal" style="background-color: #8b5cf6;">中科院四区</span> 中科院四区</div>
+                <div class="legend-item"><span class="badge-type" style="background-color: #dc2626;">Conference</span> 会议</div>
+                <div class="legend-item"><span class="badge-type" style="background-color: #059669;">Journal</span> 期刊</div>
+                <div class="legend-item"><span class="badge-first">First Author</span> 一作</div>
+                <div class="legend-item"><span class="badge-corresponding">Corresponding</span> 通讯</div>
+            </div>
+        </div>
         <div class="year-group">
             <div class="year-header">2026</div>
             <div class="pub-list">
                 <div class="pub-item corresponding">
                     <div class="pub-title">AutoHAAP: Automated Heterogeneity-Aware Asymmetric Partitioning for LLM Training</div>
                     <div class="pub-authors">Yuanyuan Wang, Nana Tang, Yuyang Wang, Shu Pan, Dingding Yu,Zeyue Wang,Mou Sun, Kejie Fu, Fangyu Wang, Yunchuan Chen, Ning Sun, <strong>Fei Yang</strong></div>
-                    <div class="pub-venue"><span class="venue-top">A</span> HPCA<span class="badge-corresponding">Corresponding</span></div>
+                    <div class="pub-venue"><span class="venue-top">CCF A</span> <span class="badge-type" style="background-color: #dc2626;">Conference</span> HPCA<span class="badge-corresponding">Corresponding</span></div>
                 </div>
                 <div class="pub-item corresponding">
                     <div class="pub-title">LaRA: Layer-wise Rank Allocation for Efficient Fine-tuning of Pruned Large Language Models</div>
                     <div class="pub-authors">Yuhua Zhou, Changhai Zhou, Shiyang Zhang, <strong>Fei Yang</strong>, Yi Zhang, Aimin Pan</div>
-                    <div class="pub-venue"><span class="venue-top">A</span> IPM<span class="badge-corresponding">Corresponding</span></div>
+                    <div class="pub-venue"><span class="venue-top">CCF A</span> <span class="badge-type" style="background-color: #dc2626;">Conference</span> IPM<span class="badge-corresponding">Corresponding</span></div>
                 </div>
                 <div class="pub-item corresponding">
                     <div class="pub-title">Zip Your Data: Length-Adaptive Visual Token Optimization for Efficient Multi-Modal Training</div>
                     <div class="pub-authors">Ning Sun,  Fangwen Wu, Yi Zhang, Si Chen, Xiuting Tao, <strong>Fei Yang</strong></div>
-                    <div class="pub-venue"><span class="venue-journal">B</span> ICASSP<span class="badge-corresponding">Corresponding</span></div>
+                    <div class="pub-venue"><span class="venue-journal">CCF B</span> <span class="badge-type" style="background-color: #dc2626;">Conference</span> ICASSP<span class="badge-corresponding">Corresponding</span></div>
                 </div>
                 <div class="pub-item corresponding">
                     <div class="pub-title">HOC: Hierarchical Overlapped Communication Optimization for Parallelism in Distributed Training</div>
                     <div class="pub-authors">Zeyue Wang, Yuanyuan Wang, Shu Pan, Yuyang Wang, Nana Tang, <strong>Fei Yang</strong></div>
-                    <div class="pub-venue"><span class="venue-journal">B</span> ISCAS<span class="badge-corresponding">Corresponding</span></div>
+                    <div class="pub-venue"><span class="venue-journal">CCF B</span> <span class="badge-type" style="background-color: #dc2626;">Conference</span> ISCAS<span class="badge-corresponding">Corresponding</span></div>
                 </div>
                 <div class="pub-item">
                     <div class="pub-title">Obscure but Effective: Classical Chinese Jailbreak Prompt Optimization via Bio-Inspired Search</div>
                     <div class="pub-authors">Xun Huang, Simeng Qin, Xiaoshuang Jia, Ranjie Duan, Huanqian Yan, Zhitao Zeng, <strong>Fei Yang</strong>, Yang Liu, Xiaojun Jia</div>
-                    <div class="pub-venue"><span class="venue-top">A</span> ICLR</div>
+                    <div class="pub-venue"><span class="venue-top">CCF A</span> <span class="badge-type" style="background-color: #dc2626;">Conference</span> ICLR</div>
                 </div>
             </div>
         </div>
@@ -279,42 +329,42 @@
                 <div class="pub-item corresponding">
                     <div class="pub-title">Environment Independent Device-Free Gait Recognition Using Channel State Information</div>
                     <div class="pub-authors">Sheng Chen, Bangzhou Xin, <strong>Fei Yang</strong> and Aimin Pan</div>
-                    <div class="pub-venue"><span class="venue-journal" style="background-color: #6b7280;">C</span> ISPA<span class="badge-corresponding">Corresponding</span></div>
+                    <div class="pub-venue"><span class="venue-journal" style="background-color: #6b7280;">CCF C</span> <span class="badge-type" style="background-color: #dc2626;">Conference</span> ISPA<span class="badge-corresponding">Corresponding</span></div>
                 </div>
                 <div class="pub-item corresponding">
                     <div class="pub-title">Parameter-Efficient Fine-Tuning in Large Models: A Survey of Methodologies</div>
                     <div class="pub-authors">Luping Wang, Sheng Chen, Linnan Jiang, Shu Pan, Runze Cai, Sen Yang, <strong>Fei Yang</strong></div>
-                    <div class="pub-venue"><span class="venue-journal">一区</span> Artificial Intelligence Review <span class="badge-corresponding">Corresponding</span></div>
+                    <div class="pub-venue"><span class="venue-journal">中科院一区</span> <span class="badge-type" style="background-color: #059669;">Journal</span> Artificial Intelligence Review <span class="badge-corresponding">Corresponding</span></div>
                 </div>
                 <div class="pub-item corresponding">
                     <div class="pub-title">A Pipeline Method of DSL Code Generation in Low-code Platforms</div>
                     <div class="pub-authors">Xin Cui, Linnan Jiang, Weixing Zhang, Aimin Pan, <strong>Fei Yang</strong></div>
-                    <div class="pub-venue"><span class="venue-journal" style="background-color: #6b7280;">C</span> ICIC<span class="badge-corresponding">Corresponding</span></div>
+                    <div class="pub-venue"><span class="venue-journal" style="background-color: #6b7280;">CCF C</span> <span class="badge-type" style="background-color: #dc2626;">Conference</span> ICIC<span class="badge-corresponding">Corresponding</span></div>
                 </div>
                 <div class="pub-item corresponding">
                     <div class="pub-title"> BSLoRA: Enhancing the Parameter Efficiency of LoRA with Intra-Layer and Inter-Layer Sharing</div>
                     <div class="pub-authors">Yuhua Zhou, Ruifeng Li, Changhai Zhou,  <strong>Fei Yang</strong>, Aimin Pan</div>
-                    <div class="pub-venue"><span class="venue-top">A</span> ICML<span class="badge-corresponding">Corresponding</span></div>
+                    <div class="pub-venue"><span class="venue-top">CCF A</span> <span class="badge-type" style="background-color: #dc2626;">Conference</span> ICML<span class="badge-corresponding">Corresponding</span></div>
                 </div>
                 <div class="pub-item corresponding">
                     <div class="pub-title">On the performance and memory footprint of distributed training: An empirical study on transformers</div>
                     <div class="pub-authors">Zhengxian Lu, Fangyu Wang, Zhiwei Xu , <strong>Fei Yang</strong>, Tao Li. </div>
-                    <div class="pub-venue"><span class="venue-journal">B</span> Software:Practice and Experience. <span class="badge-corresponding">Corresponding</span></div>
+                    <div class="pub-venue"><span class="venue-journal">CCF B</span> <span class="badge-type" style="background-color: #dc2626;">Conference</span> Software:Practice and Experience. <span class="badge-corresponding">Corresponding</span></div>
                 </div>
                 <div class="pub-item corresponding">
                     <div class="pub-title">ADFQ-ViT: Activation-Distribution-Friendly post-training Quantization for Vision Transformers</div>
                     <div class="pub-authors">Yanfeng Jiang, Ning Sun, Xueshuo Xie, <strong>Fei Yang</strong>, Tao Li.</div>
-                    <div class="pub-venue"><span class="venue-journal" style="background-color: #f59e0b;">二区</span> Neural Networks<span class="badge-corresponding">Corresponding</span></div>
+                    <div class="pub-venue"><span class="venue-journal" style="background-color: #f59e0b;">中科院二区</span> <span class="badge-type" style="background-color: #059669;">Journal</span> Neural Networks<span class="badge-corresponding">Corresponding</span></div>
                 </div>
                 <div class="pub-item">
                     <div class="pub-title">Towards Global Reaction Feasibility and Robustness Prediction with High Throughput Data and Bayesian Deep Learning</div>
                     <div class="pub-authors">Xiaoxue Wang, Haowen Zhong, Yilan Liu, Haibin Sun, Yuru Liu, Rentao Zhang, Baochen Li, Yi Yang, Yuqing Huang, <strong>Fei Yang</strong>, Frankie Mak, Klement Foo, Sen Lin, Tianshu Yu, and Peng Wang </div>
-                    <div class="pub-venue"><span class="venue-journal">一区</span> Nature Communications</div>
+                    <div class="pub-venue"><span class="venue-journal">中科院一区</span> <span class="badge-type" style="background-color: #059669;">Journal</span> Nature Communications</div>
                 </div>
                 <div class="pub-item">
                     <div class="pub-title">Deep Face Leakage: Inverting High-quality Faces from Gradients Using Residual Optimization</div>
                     <div class="pub-authors">Xu Zhang, Tao Xiang, Shangwei Guo, <strong>Fei Yang</strong>, Tianwei Zhang.</div>
-                    <div class="pub-venue"><span class="venue-journal">一区</span> TiP</div>
+                    <div class="pub-venue"><span class="venue-journal">中科院一区</span> <span class="badge-type" style="background-color: #059669;">Journal</span> TiP</div>
                 </div>
             </div>
         </div>
@@ -324,37 +374,37 @@
                 <div class="pub-item first-author">
                     <div class="pub-title">Robust and Privacy-Preserving Collaborative Learning: A Comprehensive Survey</div>
                     <div class="pub-authors"><strong>Fei Yang</strong>, Xu Zhang, Shangwei Guo, Daiyuan Chen, Tianwei Zhang, Yan Gan, Tao Xiang, Yang Liu.</div>
-                    <div class="pub-venue"><span class="venue-journal">一区</span> Artificial Intelligence Review <span class="badge-first">First Author</span></div>
+                    <div class="pub-venue"><span class="venue-journal">中科院一区</span> <span class="badge-type" style="background-color: #059669;">Journal</span> Artificial Intelligence Review <span class="badge-first">First Author</span></div>
                 </div>
                 <div class="pub-item first-author">
                     <div class="pub-title">Holmes: Towards Distributed Training Across Clusters with Heterogeneous NIC Environment</div>
                     <div class="pub-authors"><strong>Fei Yang</strong>, Shuang Peng, Ning Sun, Fangyu Wang, Yuanyuan Wang, Fu Wu, Jiezhong Qiu, Aimn Pan</div>
-                    <div class="pub-venue"><span class="venue-journal">B</span> ICPP<span class="badge-first">First Author</span></div>
+                    <div class="pub-venue"><span class="venue-journal">CCF B</span> <span class="badge-type" style="background-color: #dc2626;">Conference</span> ICPP<span class="badge-first">First Author</span></div>
                 </div>
                 <div class="pub-item corresponding">
                     <div class="pub-title">MEFold: Memory-Efficient Optimization for Protein Language Models via Chunk and Quantization</div>
                     <div class="pub-authors">Yanfeng Jiang, Ning Sun, Zhengxian Lu, Shuang Peng, Yi Zhang, <strong>Fei Yang</strong>, Tao Li. </div>
-                    <div class="pub-venue"><span class="venue-journal" style="background-color: #6b7280;">C</span> IJCNN<span class="badge-corresponding">Corresponding</span></div>
+                    <div class="pub-venue"><span class="venue-journal" style="background-color: #6b7280;">CCF C</span> <span class="badge-type" style="background-color: #dc2626;">Conference</span> IJCNN<span class="badge-corresponding">Corresponding</span></div>
                 </div>
                 <div class="pub-item corresponding">
                     <div class="pub-title">Wi-Fi based Gait Recognition using Spectrogram and Phase</div>
                     <div class="pub-authors">Sheng Chen, <strong>Fei Yang</strong>, Aimin Pan, Zhewei Mei.</div>
-                    <div class="pub-venue"><span class="venue-journal">B</span> ICME<span class="badge-corresponding">Corresponding</span></div>
+                    <div class="pub-venue"><span class="venue-journal">CCF B</span> <span class="badge-type" style="background-color: #dc2626;">Conference</span> ICME<span class="badge-corresponding">Corresponding</span></div>
                 </div>
                 <div class="pub-item corresponding">
                     <div class="pub-title">FlattenQuant: Breaking Through the Inference Compute-bound for Large Language Models with Per-tensor Quantization</div>
                     <div class="pub-authors">Yi Zhang, <strong>Fei Yang</strong>, Shuang Peng, Fangyu Wang, Aimin Pan. </div>
-                    <div class="pub-venue"><span class="venue-journal">B</span> LREC-Coling<span class="badge-corresponding">Corresponding</span></div>
+                    <div class="pub-venue"><span class="venue-journal">CCF B</span> <span class="badge-type" style="background-color: #dc2626;">Conference</span> LREC-Coling<span class="badge-corresponding">Corresponding</span></div>
                 </div>
                 <div class="pub-item">
                     <div class="pub-title">Quantitative evaluation of deep learning frameworks in heterogeneous computing environment</div>
                     <div class="pub-authors">Zhengxian Lu, Chengkun Du, Yanfeng Jiang, Xueshuo Xie, Tao Li, <strong>Fei Yang</strong></div>
-                    <div class="pub-venue"><span class="venue-journal" style="background-color: #6b7280;">C</span> CCF THPC</div>
+                    <div class="pub-venue"><span class="venue-journal" style="background-color: #6b7280;">CCF C</span> <span class="badge-type" style="background-color: #059669;">Journal</span> CCF THPC</div>
                 </div>
                 <div class="pub-item">
                     <div class="pub-title">Cpt: A pre-trained unbalanced transformer for both chinese language understanding and generation</div>
                     <div class="pub-authors">Yunfan Shao, Zhichao Geng, Yitao Liu, Junqi Dai, <strong>Fei Yang</strong>, Li Zhe, Hujun Bao, Xipeng Qiu</div>
-                    <div class="pub-venue"><span class="venue-top">A</span> Science China-Information Science</div>
+                    <div class="pub-venue"><span class="venue-top">CCF A</span> <span class="badge-type" style="background-color: #dc2626;">Conference</span> Science China-Information Science</div>
                 </div>
             </div>
         </div>
@@ -364,22 +414,22 @@
                 <div class="pub-item corresponding">
                     <div class="pub-title">Exploring Post-Training Quantization of Protein Language Models</div>
                     <div class="pub-authors">Shuang Peng, <strong>Fei Yang</strong>, Ning Sun, Sheng Chen, Yanfeng Jiang, Aimin Pan.</div>
-                    <div class="pub-venue"><span class="venue-journal">B</span> BIBM<span class="badge-corresponding">Corresponding</span></div>
+                    <div class="pub-venue"><span class="venue-journal">CCF B</span> <span class="badge-type" style="background-color: #dc2626;">Conference</span> BIBM<span class="badge-corresponding">Corresponding</span></div>
                 </div>
                 <div class="pub-item">
                     <div class="pub-title">Can App Reviews Help Developers to Improve Mobile User Interface Design?</div>
                     <div class="pub-authors">Wenge Le, Yong Wang, Cuiyun Gao, Liangfen Wei, <strong>Fei Yang</strong></div>
-                    <div class="pub-venue"><span class="venue-journal" style="background-color: #8b5cf6;">四区</span>  Journal of Internet Technology</div>
+                    <div class="pub-venue"><span class="venue-journal" style="background-color: #8b5cf6;">中科院四区</span> <span class="badge-type" style="background-color: #059669;">Journal</span>  Journal of Internet Technology</div>
                 </div>
                 <div class="pub-item">
                     <div class="pub-title">Learning from biased crowdsourced labeling with deep clustering</div>
                     <div class="pub-authors">Ming Wu, Qianmu Li, <strong>Fei Yang</strong>, Jing Zhang, Victor S Sheng, Jun Hou</div>
-                    <div class="pub-venue"><span class="venue-journal">一区</span> Expert Systems with Applications</div>
+                    <div class="pub-venue"><span class="venue-journal">中科院一区</span> <span class="badge-type" style="background-color: #059669;">Journal</span> Expert Systems with Applications</div>
                 </div>
                 <div class="pub-item">
                     <div class="pub-title">Where to go next for recommender systems? id-vs. modality-based recommender models revisited</div>
                     <div class="pub-authors">Zheng Yuan, Fajie Yuan, Yu Song, Youhua Li, Junchen Fu, <strong>Fei Yang</strong>, Yunzhu Pan, Yongxin Ni.</div>
-                    <div class="pub-venue"><span class="venue-top">A</span> SigIR</div>
+                    <div class="pub-venue"><span class="venue-top">CCF A</span> <span class="badge-type" style="background-color: #dc2626;">Conference</span> SigIR</div>
                 </div>
             </div>
         </div>
@@ -389,42 +439,42 @@
                 <div class="pub-item">
                     <div class="pub-title">Measuring programming ability for novice programmers</div>
                     <div class="pub-authors">Xue Wang, Yong Wang, <strong>Fei Yang</strong>, Wenge Le, Shouhang Wang</div>
-                    <div class="pub-venue"><span class="venue-journal" style="background-color: #8b5cf6;">四区</span>  Journal of Internet Technology</div>
+                    <div class="pub-venue"><span class="venue-journal" style="background-color: #8b5cf6;">中科院四区</span> <span class="badge-type" style="background-color: #059669;">Journal</span>  Journal of Internet Technology</div>
                 </div>
                 <div class="pub-item">
                     <div class="pub-title">Towards Unified Prompt Tuning for Few-shot Text Classification </div>
                     <div class="pub-authors">Jianing Wang, Chengyu Wang, Fuli Luo, Chuanqi Tan, Minghui Qiu, <strong>Fei Yang</strong>, Qiuhui Shi, Songfang Huang, Ming Gao</div>
-                    <div class="pub-venue"> EMNLP Findings</div>
+                    <div class="pub-venue"><span class="badge-type" style="background-color: #dc2626;">Conference</span> EMNLP Findings</div>
                 </div>
                 <div class="pub-item">
                     <div class="pub-title">An effective coaxiality measurement for twist drill based on line structured light sensor</div>
                     <div class="pub-authors">Ailing Cheng, Jiaojiao Ye, <strong>Fei Yang</strong>, Shufang Lu, Fei Gao.</div>
-                    <div class="pub-venue"><span class="venue-journal">一区</span> IEEE Transactions on Instrumentation and Measurement</div>
+                    <div class="pub-venue"><span class="venue-journal">中科院一区</span> <span class="badge-type" style="background-color: #059669;">Journal</span> IEEE Transactions on Instrumentation and Measurement</div>
                 </div>
                 <div class="pub-item">
                     <div class="pub-title">Learning unbiased transferability for domain adaptation by uncertainty modeling</div>
                     <div class="pub-authors">Jian Hu, Haowen Zhong, <strong>Fei Yang</strong>, Shaogang Gong, Guile Wu, Junchi Yan</div>
-                    <div class="pub-venue"><span class="venue-journal">B</span> ECCV</div>
+                    <div class="pub-venue"><span class="venue-journal">CCF B</span> <span class="badge-type" style="background-color: #dc2626;">Conference</span> ECCV</div>
                 </div>
                 <div class="pub-item">
                     <div class="pub-title">Complementary characteristics fusion network for weakly supervised salient object detection</div>
                     <div class="pub-authors">Yan Liu, Yunzhou Zhang, Zhenyu Wang, <strong>Fei Yang</strong>, Cao Qin, Feng Qiu, Sonya Coleman, Dermot Kerr</div>
-                    <div class="pub-venue"><span class="venue-journal" style="background-color: #6366f1;">三区</span>  Image and Vision Computing.</div>
+                    <div class="pub-venue"><span class="venue-journal" style="background-color: #6366f1;">中科院三区</span> <span class="badge-type" style="background-color: #059669;">Journal</span>  Image and Vision Computing.</div>
                 </div>
                 <div class="pub-item">
                     <div class="pub-title">Arobert: An asr robust pre-trained language model for spoken language understanding</div>
                     <div class="pub-authors">Chengyu Wang, Suyang Dai, Yipeng Wang, <strong>Fei Yang</strong>, Minghui Qiu, Kehan Chen, Wei Zhou, Jun Huang</div>
-                    <div class="pub-venue"><span class="venue-journal">B</span> TASLP</div>
+                    <div class="pub-venue"><span class="venue-journal">CCF B</span> <span class="badge-type" style="background-color: #dc2626;">Conference</span> TASLP</div>
                 </div>
                 <div class="pub-item">
                     <div class="pub-title">Exploring evolution-aware &-free protein language models as protein function predictors</div>
                     <div class="pub-authors">Mingyang Hu, Fajie Yuan, Kevin Yang, Fusong Ju, Jin Su, Hui Wang, <strong>Fei Yang</strong>, Qiuyang Ding.</div>
-                    <div class="pub-venue"><span class="venue-top">A</span> NIPS</div>
+                    <div class="pub-venue"><span class="venue-top">CCF A</span> <span class="badge-type" style="background-color: #dc2626;">Conference</span> NIPS</div>
                 </div>
                 <div class="pub-item">
                     <div class="pub-title">Emerging topic identification from app reviews via adaptive online biterm topic modeling</div>
                     <div class="pub-authors">Wan Zhou, Yong Wang, Cuiyun Gao, <strong>Fei Yang</strong></div>
-                    <div class="pub-venue"><span class="venue-journal" style="background-color: #6366f1;">三区</span> Frontiers of Information Technology & Electronic Engineering</div>
+                    <div class="pub-venue"><span class="venue-journal" style="background-color: #6366f1;">中科院三区</span> <span class="badge-type" style="background-color: #059669;">Journal</span> Frontiers of Information Technology & Electronic Engineering</div>
                 </div>
             </div>
         </div>
@@ -434,22 +484,22 @@
                 <div class="pub-item first-author">
                     <div class="pub-title">The pi-Calculus is Behaviourally Complete and Orbit-Finitely Executable</div>
                     <div class="pub-authors">Bas Luttik, <strong>Fei Yang</strong></div>
-                    <div class="pub-venue"><span class="venue-journal" style="background-color: #6b7280;">C</span> LMCS<span class="badge-first">First Author</span></div>
+                    <div class="pub-venue"><span class="venue-journal" style="background-color: #6b7280;">CCF C</span> <span class="badge-type" style="background-color: #059669;">Journal</span> LMCS<span class="badge-first">First Author</span></div>
                 </div>
                 <div class="pub-item">
                     <div class="pub-title">A survey on tackling software configuration faults</div>
                     <div class="pub-authors">Wenge Le, Yong Wang, <strong>Fei Yang</strong>, Xue Wang, Shouhang Wang</div>
-                    <div class="pub-venue"> ISSSR</div>
+                    <div class="pub-venue"><span class="badge-type" style="background-color: #dc2626;">Conference</span> ISSSR</div>
                 </div>
                 <div class="pub-item">
                     <div class="pub-title">Meta Distant Transfer Learning for Pre-trained Language Models</div>
                     <div class="pub-authors">Chengyu Wang, Haojie Pan, Minghui Qiu, Jun Huang, <strong>Fei Yang</strong>, Yin Zhang. </div>
-                    <div class="pub-venue"><span class="venue-journal">B</span> EMNLP</div>
+                    <div class="pub-venue"><span class="venue-journal">CCF B</span> <span class="badge-type" style="background-color: #dc2626;">Conference</span> EMNLP</div>
                 </div>
                 <div class="pub-item">
                     <div class="pub-title">OneFlow: Redesign the Distributed Deep Learning Framework from Scratch</div>
                     <div class="pub-authors">Jinhui Yuan, Xinqi Li, Cheng Cheng, Juncheng Liu, Ran Guo, Shenghang Cai, Chi Yao, <strong>Fei Yang</strong>, Xiaodong Yi, Chuan Wu, Haoran Zhang, Jie Zhao</div>
-                    <div class="pub-venue"> arxiv</div>
+                    <div class="pub-venue"><span class="badge-type" style="background-color: #dc2626;">Conference</span> arxiv</div>
                 </div>
             </div>
         </div>
@@ -459,7 +509,7 @@
                 <div class="pub-item first-author">
                     <div class="pub-title">Sequential Composition in the Presence of Intermediate Termination</div>
                     <div class="pub-authors">Jos Baeten, Bas Luttik, <strong>Fei Yang</strong></div>
-                    <div class="pub-venue"> Express/SoS<span class="badge-first">First Author</span></div>
+                    <div class="pub-venue"><span class="badge-type" style="background-color: #dc2626;">Conference</span> Express/SoS<span class="badge-first">First Author</span></div>
                 </div>
             </div>
         </div>
@@ -469,7 +519,7 @@
                 <div class="pub-item first-author">
                     <div class="pub-title">On the Executability of Interactive Computation</div>
                     <div class="pub-authors">Bas Luttik, <strong>Fei Yang</strong></div>
-                    <div class="pub-venue"> CiE<span class="badge-first">First Author</span></div>
+                    <div class="pub-venue"><span class="badge-type" style="background-color: #dc2626;">Conference</span> CiE<span class="badge-first">First Author</span></div>
                 </div>
             </div>
         </div>
@@ -479,17 +529,17 @@
                 <div class="pub-item first-author">
                     <div class="pub-title">Bidirectional transformation on ordered graphs</div>
                     <div class="pub-authors"><strong>Fei Yang</strong>, Soichiro Hidaka</div>
-                    <div class="pub-venue"> GRACE Center TR<span class="badge-first">First Author</span></div>
+                    <div class="pub-venue"><span class="badge-type" style="background-color: #dc2626;">Conference</span> GRACE Center TR<span class="badge-first">First Author</span></div>
                 </div>
                 <div class="pub-item first-author">
                     <div class="pub-title">A polynomial time algorithm for checking regularity of totally normed process algebra</div>
                     <div class="pub-authors"><strong>Fei Yang</strong>, Hao Huang</div>
-                    <div class="pub-venue"> JSJTU<span class="badge-first">First Author</span></div>
+                    <div class="pub-venue"><span class="badge-type" style="background-color: #059669;">Journal</span> JSJTU<span class="badge-first">First Author</span></div>
                 </div>
                 <div class="pub-item first-author">
                     <div class="pub-title">Executability behaviour and the pi-calculus</div>
                     <div class="pub-authors">Bas Luttik, <strong>Fei Yang</strong></div>
-                    <div class="pub-venue"> ICE<span class="badge-first">First Author</span></div>
+                    <div class="pub-venue"><span class="badge-type" style="background-color: #dc2626;">Conference</span> ICE<span class="badge-first">First Author</span></div>
                 </div>
             </div>
         </div>
@@ -499,7 +549,7 @@
                 <div class="pub-item">
                     <div class="pub-title">An interpretation of Erlang into value-passing Calculus</div>
                     <div class="pub-authors">Hao Huang, <strong>Fei Yang</strong></div>
-                    <div class="pub-venue"><span class="venue-journal" style="background-color: #6366f1;">三区</span> Journal of Networks</div>
+                    <div class="pub-venue"><span class="venue-journal" style="background-color: #6366f1;">中科院三区</span> <span class="badge-type" style="background-color: #059669;">Journal</span> Journal of Networks</div>
                 </div>
             </div>
         </div>
