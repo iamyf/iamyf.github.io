@@ -563,7 +563,7 @@
                     <p class="affiliation">
                         Deputy Director<br>
                         High-Performance Computing Facility Research Center<br>
-                        Zhejiang Laboratory
+                        <a href="https://www.zhejianglab.org/" target="_blank" style="color: var(--primary-color); text-decoration: none;">Zhejiang Lab</a>
                     </p>
                     <div class="contacts">
                         <a href="https://scholar.google.com/citations?user=d1Z_A9AAAAAJ&hl=en" target="_blank" class="contact-link">
@@ -587,8 +587,8 @@
                 <li><a href="#about" class="nav-link active">About</a></li>
                 <li><a href="#biography">Biography</a></li>
                 <li><a href="#contributions">Contributions</a></li>
-                <li><a href="#publications">Publications</a></li>
                 <li><a href="#awards">Awards</a></li>
+                <li><a href="#publications">Publications</a></li>
             </ul>
         </div>
     </nav>
@@ -635,27 +635,27 @@
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-period">2020 - Present</div>
-                    <div class="timeline-title">Zhejiang Laboratory</div>
+                    <div class="timeline-title"><a href="https://www.zhejianglab.org/" target="_blank" style="color: var(--text-color); text-decoration: none;">Zhejiang Lab</a></div>
                     <div class="timeline-place">Deputy Director, High-Performance Computing Facility Research Center<br>Associate Professor</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-period">2019 - 2020</div>
-                    <div class="timeline-title">Nanyang Technological University</div>
-                    <div class="timeline-place">Research Fellow<br>Singapore</div>
+                    <div class="timeline-title"><a href="https://www.ntu.edu.sg/" target="_blank" style="color: var(--text-color); text-decoration: none;">Nanyang Technological University</a></div>
+                    <div class="timeline-place">Research Fellow<br>Singapore<br>Advisor: <a href="https://personal.ntu.edu.sg/yangliu/" target="_blank" style="color: var(--primary-color); text-decoration: none;">Yang Liu</a></div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-period">2014 - 2018</div>
-                    <div class="timeline-title">Eindhoven University of Technology</div>
-                    <div class="timeline-place">Ph.D.<br>Netherlands</div>
+                    <div class="timeline-title"><a href="https://www.tue.nl/" target="_blank" style="color: var(--text-color); text-decoration: none;">Eindhoven University of Technology</a></div>
+                    <div class="timeline-place">Ph.D.<br>Netherlands<br>Ph.D. Advisors: <a href="https://www.win.tue.nl/~josb/" target="_blank" style="color: var(--primary-color); text-decoration: none;">Jos Baeten</a>, <a href="https://www.win.tue.nl/~basl/" target="_blank" style="color: var(--primary-color); text-decoration: none;">Bas Luttik</a></div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-period">2011 - 2014</div>
-                    <div class="timeline-title">Shanghai Jiao Tong University</div>
-                    <div class="timeline-place">M.Eng.<br>Shanghai, China</div>
+                    <div class="timeline-title"><a href="https://www.sjtu.edu.cn/" target="_blank" style="color: var(--text-color); text-decoration: none;">Shanghai Jiao Tong University</a></div>
+                    <div class="timeline-place">M.Eng.<br>Shanghai, China<br>M.Eng. Advisor: <a href="https://www.cs.sjtu.edu.cn/En/Faculty/Faculty-List/2017/7/27/201772715545612.html" target="_blank" style="color: var(--primary-color); text-decoration: none;">Yuxi Fu</a></div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-period">2007 - 2011</div>
-                    <div class="timeline-title">Shanghai Jiao Tong University</div>
+                    <div class="timeline-title"><a href="https://www.sjtu.edu.cn/" target="_blank" style="color: var(--text-color); text-decoration: none;">Shanghai Jiao Tong University</a></div>
                     <div class="timeline-place">B.Eng.<br>Shanghai, China</div>
                 </div>
             </div>
@@ -848,6 +848,18 @@
 
         // 当前年份
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // 简单的页面访问计数器（使用localStorage）
+        function updatePageViews() {
+            let views = localStorage.getItem('pageViews');
+            if (!views) {
+                views = 0;
+            }
+            views = parseInt(views) + 1;
+            localStorage.setItem('pageViews', views);
+            document.getElementById('pageViews').textContent = views.toLocaleString();
+        }
+        updatePageViews();
     </script>
 </body>
 </html>
